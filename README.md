@@ -10,6 +10,7 @@ LiveTiming Server for [Kart Racing Pro](https://www.kartracing-pro.com/).
 
 - Download Release
 - Extract Release
+- Configure ```config.ts```
 - Run ```npm install```
 - Run ```npm start```
 
