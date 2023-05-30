@@ -1,6 +1,11 @@
 import KRPNodeWrapper from 'krp-node-wrapper';
 import {Server as SocketServer} from "socket.io";
-import Config from "../../config";
+import fs from "fs";
+import path from "path";
+import process from "process";
+import {ConfigT} from "../types/ConfigT";
+
+const Config: ConfigT = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'config.json'), 'utf-8'));
 
 class Server {
   private readonly wrapper: KRPNodeWrapper;
