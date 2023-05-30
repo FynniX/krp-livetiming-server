@@ -4,15 +4,14 @@ LiveTiming Server for [Kart Racing Pro](https://www.kartracing-pro.com/).
 
 ## Requirements
 
-- [Node.js](https://nodejs.org/)
+- None
 
 ## Installing
 
-- Download Release
-- Extract Release
-- Configure ```config.ts```
-- Run ```npm install```
-- Run ```npm start```
+- Download executable for your OS + Config.json
+- Put them in the same folder
+- Configure ```config.json```
+- Run the executable
 
 ## License
 

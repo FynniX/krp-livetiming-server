@@ -108,3 +108,5 @@ dist
 
 #Test Script
 test.ts
+
+config.json
