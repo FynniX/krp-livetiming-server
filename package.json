@@ -1,6 +1,6 @@
 {
   "name": "krp-livetiming-server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "LiveTiming Server for Kart Racing Pro",
   "main": "src/index.ts",
   "bin": "dist/index.js",
@@ -22,7 +22,7 @@
     "typescript": "^5.0.4"
   },
   "dependencies": {
-    "krp-node-wrapper": "^1.0.0",
+    "krp-node-wrapper": "^1.0.2",
     "pkg": "^5.8.1",
     "socket.io": "^4.6.1"
   },

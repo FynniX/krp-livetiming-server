@@ -13,7 +13,6 @@ class Server {
 
   constructor() {
     this.io = new SocketServer(Config.Server.port);
-
     this.wrapper = new KRPNodeWrapper(
       Config.Connection.hostname,
       Config.Connection.port,
@@ -21,9 +20,21 @@ class Server {
       Config.Connection.logging,
     )
 
+    this.io.on("connection", () => {
+      this.wrapper.disconnect();
+      this.wrapper.connect();
+    });
+
     this.wrapper.on('connected', () => console.log("Wrapper connected!"));
     this.wrapper.on('disconnected', () => console.log("Wrapper disconnected!"));
     this.wrapper.on('update', (type, data) => this.io.emit('update', type, data));
+
+    process.on('exit', () => this.wrapper.disconnect());
+    process.on('SIGINT', () => process.exit(2));
+    process.on('uncaughtException', (e) => {
+      console.error(e.stack);
+      process.exit(99);
+    });
 
     console.log("Server started!")
   }
